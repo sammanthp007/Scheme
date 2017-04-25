@@ -48,3 +48,18 @@
   )
 
 (apnd '(s d f) '(a v x))
+
+;; To find pattern of 0,1,1,5,4,14,10,31,21,61,40
+(define (func n)
+  (cond
+    ((negative? n) 0)
+    ((= n 0) 0)
+    ((odd? n) (+ n (func (- n 1)) (func (- n 2))))
+    (else
+     (- (func (- n 1)) (func (- n 2)))
+     )
+    )
+  )
+
+(func 9)
+
