@@ -63,3 +63,13 @@
 
 (func 9)
 
+
+(define (sum-gen L)
+  (cond
+    ((null? L) 0)
+    ((number? (car L)) (+ (car L) (sum-gen (cdr L))))
+    (else (+ (sum-gen (car L)) (sum-gen (cdr L))))
+    )
+  )
+
+(sum-gen '(-2 4 5 6))
